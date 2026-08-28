@@ -332,11 +332,18 @@ document.addEventListener('DOMContentLoaded', () => {
         }
       });
     }, {
-      threshold: 0.1,
-      rootMargin: '0px 0px -40px 0px'
+      threshold: 0.05,
+      rootMargin: '0px 0px -20px 0px'
     });
 
-    reveals.forEach(el => revealObserver.observe(el));
+    reveals.forEach(el => {
+      const rect = el.getBoundingClientRect();
+      if (rect.top < window.innerHeight) {
+        el.classList.add('is-visible');
+      } else {
+        revealObserver.observe(el);
+      }
+    });
   } else {
     reveals.forEach(el => el.classList.add('is-visible'));
   }

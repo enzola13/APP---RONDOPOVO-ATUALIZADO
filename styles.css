@@ -2102,8 +2102,10 @@ img, picture {
 }
 
 /* ==========================================================================
-   13. RESPONSIVE BREAKPOINTS
+   13. RESPONSIVE BREAKPOINTS (Mobile-First & Candidate Priority)
    ========================================================================== */
+
+/* --- Tablet & Medium Screens (max-width: 1024px) --- */
 @media (max-width: 1024px) {
   .header__nav {
     display: none;
@@ -2114,36 +2116,62 @@ img, picture {
   }
 
   .hero-reference-container {
-    grid-template-columns: 1fr;
-    gap: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     text-align: center;
+    gap: 1.5rem;
+    min-height: auto;
+    padding-top: 1rem;
   }
 
-  .hero-left-column {
-    padding-bottom: 1rem;
+  /* Candidate first on tablets and mobile! */
+  .hero-right-column {
+    order: 1;
+    width: 100%;
+    display: flex;
+    justify-content: center;
     align-items: center;
   }
 
-  .hero-tag-badge,
-  .hero-sub-banner {
-    margin-left: auto;
-    margin-right: auto;
+  .hero-left-column {
+    order: 2;
+    padding-bottom: 2rem;
+    align-items: center;
+    max-width: 600px;
   }
 
-  .hero-disclaimer {
+  .hero-tag-badge,
+  .hero-sub-banner,
+  .hero-disclaimer,
+  .hero-cta-group {
     margin-left: auto;
     margin-right: auto;
   }
 
   .hero-cta-group {
-    margin-left: auto;
-    margin-right: auto;
     width: 100%;
+    max-width: 420px;
+  }
+
+  .candidate-hero-wrapper {
+    max-width: 440px;
+  }
+
+  .candidate-cutout-img {
+    max-height: 400px;
   }
 
   .geo-yellow {
-    width: 70%;
-    clip-path: polygon(0 0, 100% 0, 100% 100%, 30% 100%);
+    width: 75%;
+    clip-path: polygon(15% 0, 100% 0, 100% 100%, 0% 100%);
+    opacity: 0.9;
+  }
+
+  .geo-green {
+    width: 40%;
+    clip-path: polygon(30% 0, 100% 0, 100% 100%, 0% 100%);
+    opacity: 0.9;
   }
 
   .destaque-grid,
@@ -2160,51 +2188,558 @@ img, picture {
   }
 }
 
-@media (max-width: 768px) {
+/* --- Mobile Breakpoint (max-width: 860px) --- */
+@media (max-width: 860px) {
   .top-accessibility-bar {
     display: none;
   }
 
   .floating-access-badge {
-    display: none;
+    display: none !important;
   }
 
-  .mobile-sticky-bar {
-    display: flex;
+  .floating-cookie-pill {
+    display: none !important;
+  }
+}
+
+/* --- Standard Smartphones (max-width: 768px) --- */
+@media (max-width: 768px) {
+  :root {
+    --header-height: 62px;
   }
 
   body {
-    padding-bottom: 60px;
+    padding-bottom: 64px;
   }
 
+  /* Compact Sticky Header */
+  .header__inner {
+    min-height: var(--header-height);
+    padding: 0.4rem 0.85rem;
+    gap: 0.5rem;
+  }
+
+  .brand-name {
+    font-size: 1.25rem;
+  }
+
+  .brand-cargo {
+    font-size: 0.55rem;
+    letter-spacing: 0.5px;
+  }
+
+  .brand-number {
+    font-size: 1.7rem;
+    letter-spacing: -0.5px;
+  }
+
+  .header__actions {
+    gap: 0.5rem;
+  }
+
+  .header__actions .btn-yellow-cta {
+    display: none;
+  }
+
+  .header-search-btn {
+    width: 36px;
+    height: 36px;
+  }
+
+  .header__toggle {
+    width: 36px;
+    height: 36px;
+    padding: 7px;
+  }
+
+  /* Hero Section: Candidate is the First Thing Seen! */
   .hero-reference-section {
-    padding-top: 2rem;
+    padding-top: 1rem;
+    min-height: auto;
+  }
+
+  .hero-reference-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 1rem;
+    min-height: auto;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .hero-right-column {
+    order: 1;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-top: 0.25rem;
+    margin-bottom: 0.25rem;
+  }
+
+  .candidate-hero-wrapper {
+    width: 100%;
+    max-width: 320px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .candidate-glow {
+    width: 260px;
+    height: 260px;
+    bottom: 5%;
+    filter: blur(30px);
+  }
+
+  .candidate-image-frame {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+  }
+
+  .candidate-cutout-img {
+    max-height: 290px;
+    width: auto;
+    max-width: 100%;
+    object-fit: contain;
+    margin: 0 auto;
+    filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.45));
+  }
+
+  /* Candidate Badge Overlay below the Cutout */
+  .candidate-badge-overlay {
+    position: relative;
+    bottom: auto;
+    left: auto;
+    transform: none;
+    width: 100%;
+    max-width: 300px;
+    margin-top: -1.2rem;
+    z-index: 10;
+    padding: 0.55rem 0.95rem;
+    border-radius: var(--radius-md);
+    background: rgba(0, 35, 95, 0.94);
+    border: 1.5px solid rgba(255, 210, 0, 0.45);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.6rem;
+    text-align: left;
+  }
+
+  .overlay-deus {
+    font-size: 0.55rem;
+    letter-spacing: 0.8px;
+  }
+
+  .overlay-ron {
+    font-size: 1.15rem;
+  }
+
+  .overlay-dopovo {
+    font-size: 1.05rem;
+  }
+
+  .overlay-deputado {
+    font-size: 0.55rem;
+    letter-spacing: 0.8px;
+  }
+
+  .overlay-num {
+    font-size: 1.8rem;
+  }
+
+  /* Left Column (Headline, Slogan & Zap Button) */
+  .hero-left-column {
+    order: 2;
+    width: 100%;
+    max-width: 480px;
+    padding: 0 0 1.5rem 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .hero-tag-badge {
+    font-size: 0.72rem;
+    padding: 0.3rem 0.8rem;
+    margin: 0 auto;
+  }
+
+  .hero-headline {
+    margin: 0;
+    text-align: center;
+  }
+
+  .hero-headline__sub {
+    font-size: clamp(1.75rem, 6vw, 2.3rem);
+    line-height: 1.1;
   }
 
   .hero-headline__vencer {
-    font-size: 3.8rem;
+    font-size: clamp(3.2rem, 12vw, 4.4rem);
+    line-height: 0.95;
+    letter-spacing: -1.5px;
   }
 
-  .candidate-badge-overlay {
-    bottom: 0.5rem;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 92%;
-    justify-content: space-between;
-    padding: 0.6rem 1rem;
+  .hero-sub-banner {
+    font-size: clamp(0.92rem, 3.5vw, 1.1rem);
+    padding: 0.45rem 1rem;
+    border-radius: var(--radius-sm);
+    margin: 0 auto;
   }
 
-  .destaque-card-wrapper,
-  .bio-main-card,
-  .moldura-card-panel,
-  .participe-box {
-    padding: 1.75rem 1.25rem;
+  .hero-disclaimer {
+    font-size: 0.74rem;
+    line-height: 1.4;
+    max-width: 420px;
+    color: #cbd5e1;
+    margin: 0.2rem auto 0;
+    text-align: center;
   }
 
-  .agenda-item {
+  .hero-cta-group {
+    width: 100%;
+    max-width: 340px;
+    margin: 0.4rem auto 0;
+    gap: 0.65rem;
+  }
+
+  .hero-btn-zap-yellow {
+    font-size: 1.05rem;
+    padding: 0.85rem 1.25rem;
+    width: 100%;
+    justify-content: center;
+  }
+
+  .hero-btn-contribute {
+    font-size: 0.8rem;
+    padding: 0.75rem 1rem;
+    width: 100%;
+    text-align: center;
+  }
+
+  /* Geometric BG on Mobile */
+  .geo-yellow {
+    width: 85%;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 15% 100%);
+    opacity: 0.85;
+  }
+
+  .geo-green {
+    width: 45%;
+    clip-path: polygon(35% 0, 100% 0, 100% 100%, 0% 100%);
+    opacity: 0.85;
+  }
+
+  /* Hero Bottom Ticker */
+  .hero-bottom-ticker {
+    padding: 0.75rem 0.5rem;
+  }
+
+  .hero-ticker__inner {
+    flex-direction: column;
+    gap: 0.35rem;
+    font-size: 0.82rem;
+  }
+
+  /* General Section Spacing on Mobile */
+  .section {
+    padding: 3rem 0;
+  }
+
+  .section-title-wrap {
+    margin-bottom: 2rem;
+  }
+
+  .section-main-title {
+    font-size: clamp(1.75rem, 5vw, 2.2rem);
+  }
+
+  .section-subtitle-text {
+    font-size: 0.95rem;
+  }
+
+  /* Jingle Player */
+  .jingle-player-card {
+    padding: 1.25rem 1rem;
+    border-radius: var(--radius-md);
+  }
+
+  .jingle-player-grid {
     flex-direction: column;
     text-align: center;
     gap: 1rem;
+  }
+
+  .jingle-title {
+    font-size: 1.15rem;
+  }
+
+  .jingle-subtitle {
+    font-size: 0.8rem;
+  }
+
+  .jingle-controls-wrap {
+    width: 100%;
+    max-width: 100%;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.75rem;
+  }
+
+  .jingle-progress-bar-wrap {
+    width: 100%;
+    flex: 1 1 100%;
+    order: 2;
+  }
+
+  .jingle-play-btn {
+    width: 44px;
+    height: 44px;
+    order: 1;
+  }
+
+  .sound-wave-bars {
+    display: none;
+  }
+
+  .btn-download-jingle {
+    order: 3;
+    width: 100%;
+    justify-content: center;
+    font-size: 0.82rem;
+    padding: 0.65rem 1rem;
+  }
+
+  /* Dor Crônica Section */
+  .destaque-card-wrapper {
+    padding: 1.5rem 1rem;
+    border-radius: var(--radius-md);
+  }
+
+  .destaque-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .destaque-title {
+    font-size: 1.5rem;
+  }
+
+  .destaque-text {
+    font-size: 0.95rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .destaque-feat-item {
+    gap: 0.75rem;
+  }
+
+  .feat-icon-box {
+    width: 38px;
+    height: 38px;
+    font-size: 1.15rem;
+  }
+
+  .destaque-actions .btn-yellow-cta {
+    width: 100%;
+    justify-content: center;
+  }
+
+  /* Biografia Section */
+  .bio-main-card {
+    padding: 1.5rem 1rem;
+    border-radius: var(--radius-md);
+    margin-bottom: 2rem;
+  }
+
+  .bio-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .bio-candidate-photo {
+    height: 280px;
+  }
+
+  .trajetoria-pillars-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .pillar-card {
+    padding: 1.25rem 1rem;
+  }
+
+  /* Propostas Section */
+  .propostas-cards-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .prop-box {
+    padding: 1.5rem 1.15rem;
+    border-radius: var(--radius-md);
+  }
+
+  /* Moldura / Gerador de Foto */
+  .moldura-card-panel {
+    padding: 1.5rem 1rem;
+    border-radius: var(--radius-md);
+  }
+
+  .moldura-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .moldura-title {
+    font-size: 1.55rem;
+  }
+
+  .canvas-preview-wrapper {
+    max-width: 280px;
+    width: 100%;
+  }
+
+  .moldura-controls {
+    flex-direction: column;
+    width: 100%;
+    gap: 0.75rem;
+  }
+
+  .btn-upload-photo,
+  .btn-download-frame {
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+  }
+
+  /* Materiais Section */
+  .materiais-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .material-card {
+    padding: 1.5rem 1rem;
+    border-radius: var(--radius-md);
+  }
+
+  /* Agenda Section */
+  .agenda-item {
+    padding: 1.25rem 1rem;
+    flex-direction: column;
+    text-align: center;
+    gap: 0.85rem;
+    align-items: center;
+  }
+
+  .agenda-date {
+    width: 100%;
+    max-width: 140px;
+  }
+
+  /* Participe Section */
+  .participe-box {
+    padding: 1.5rem 1rem;
+    border-radius: var(--radius-md);
+  }
+
+  .participe-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .participe-title {
+    font-size: 1.55rem;
+  }
+
+  .participe-form-wrapper {
+    padding: 1.5rem 1rem;
+    border-radius: var(--radius-md);
+  }
+
+  /* Footer on Mobile */
+  .footer {
+    padding: 3rem 0 1.5rem;
+  }
+
+  .footer__main {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .footer__bottom {
+    padding-top: 1.5rem;
+  }
+
+  /* Mobile Sticky Bottom Bar */
+  .mobile-sticky-bar {
+    display: flex;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 58px;
+    padding: 0.35rem 0.65rem;
+    gap: 0.5rem;
+    z-index: 1050;
+    background: rgba(0, 26, 72, 0.97);
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+    box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.35);
+    backdrop-filter: blur(12px);
+  }
+
+  .mobile-sticky-btn {
+    font-size: 0.78rem;
+    padding: 0.5rem 0.4rem;
+  }
+}
+
+/* --- Compact Mobile Devices (max-width: 400px) --- */
+@media (max-width: 400px) {
+  .brand-name {
+    font-size: 1.15rem;
+  }
+
+  .brand-number {
+    font-size: 1.5rem;
+  }
+
+  .candidate-hero-wrapper {
+    max-width: 270px;
+  }
+
+  .candidate-cutout-img {
+    max-height: 250px;
+  }
+
+  .candidate-badge-overlay {
+    padding: 0.5rem 0.75rem;
+  }
+
+  .overlay-ron {
+    font-size: 1.05rem;
+  }
+
+  .overlay-num {
+    font-size: 1.6rem;
+  }
+
+  .hero-headline__vencer {
+    font-size: 2.9rem;
   }
 }
 
