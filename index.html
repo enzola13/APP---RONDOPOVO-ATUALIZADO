@@ -1,0 +1,931 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="default">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>Ron do Povo 11333 | Deputado Estadual — Deus é Fiel</title>
+  <meta name="description" content="Site oficial de Ron do Povo 11333 para Deputado Estadual da Bahia. Conheça as propostas, biografia, jingle oficial e participe da caminhada.">
+  <meta name="theme-color" content="#009944">
+  
+  <!-- Open Graph / Social Meta -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Ron do Povo 11333 | Deputado Estadual — A Bahia Vai Vencer">
+  <meta property="og:description" content="Da luta diária ao trabalho comprovado. Conheça as propostas de Ron do Povo 11333 para toda a Bahia.">
+  <meta property="og:image" content="images/ron-foto-azul.jpg">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="images/logo-ron-verde.png">
+  
+  <!-- Google Fonts: Plus Jakarta Sans & Outfit (Montserrat / Impact Typography) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Montserrat:wght@700;800;900&display=swap" rel="stylesheet">
+  
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body id="topo">
+
+  <!-- =========================================================================
+       1. TOP ACCESSIBILITY BAR (Padrão Oficial de Acessibilidade)
+       ========================================================================= -->
+  <aside class="top-accessibility-bar" aria-label="Barra de Acessibilidade">
+    <div class="container top-accessibility-bar__inner">
+      <div class="top-accessibility-bar__title">
+        <span>ACESSIBILIDADE</span>
+      </div>
+      
+      <div class="top-accessibility-bar__tools">
+        <button type="button" class="access-pill-btn" id="btn-font-dec" aria-label="Diminuir tamanho da fonte">
+          <span>A-</span>
+        </button>
+        <button type="button" class="access-pill-btn" id="btn-font-inc" aria-label="Aumentar tamanho da fonte">
+          <span>A+</span>
+        </button>
+        <button type="button" class="access-pill-btn" id="btn-contrast" aria-label="Alternar Alto Contraste">
+          <span class="btn-icon">🌓</span>
+          <span>Alto contraste</span>
+        </button>
+        <button type="button" class="access-pill-btn" id="btn-darkmode" aria-label="Alternar Modo Escuro">
+          <span class="btn-icon">🌙</span>
+          <span>Modo escuro</span>
+        </button>
+        <button type="button" class="access-pill-btn" id="btn-libras" aria-label="Acessibilidade em Libras">
+          <span class="btn-icon">🤟</span>
+          <span>Libras</span>
+        </button>
+        <button type="button" class="access-pill-btn" id="btn-font-reset" aria-label="Redefinir tamanho da fonte">
+          <span>Fonte 100%</span>
+        </button>
+      </div>
+    </div>
+  </aside>
+
+  <!-- =========================================================================
+       2. MAIN HEADER & NAVIGATION (Verde Campanha com Logo e Ações)
+       ========================================================================= -->
+  <header class="header" id="header-nav">
+    <div class="container header__inner">
+      
+      <!-- Brand Logo -->
+      <a class="header__brand" href="#inicio" aria-label="Ron do Povo 11333 — Início">
+        <div class="brand-badge-combo">
+          <div class="brand-text-wrap">
+            <span class="brand-name">Ron<span class="brand-heart">💚</span>do povo</span>
+            <span class="brand-cargo">DEPUTADO ESTADUAL</span>
+          </div>
+          <span class="brand-number">11333</span>
+        </div>
+      </a>
+
+      <!-- Desktop Nav Menu -->
+      <nav class="header__nav" id="menu-principal" aria-label="Navegação Principal">
+        <a href="#inicio" class="nav-link is-active">INÍCIO</a>
+        <a href="#agenda" class="nav-link">AGENDA</a>
+        <a href="#propostas" class="nav-link">PROPOSTAS</a>
+        <a href="#biografia" class="nav-link">RON DO POVO</a>
+        <a href="#dor-cronica" class="nav-link">SAÚDE</a>
+        <a href="#materiais" class="nav-link">MATERIAIS</a>
+        <a href="#foto-perfil" class="nav-link">FOTO 11333</a>
+        <a href="#participe" class="nav-link">PARTICIPE</a>
+      </nav>
+
+      <!-- Header Actions: Search & Yellow CTA -->
+      <div class="header__actions">
+        <button class="header-search-btn" id="open-search-modal" aria-label="Abrir pesquisa">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+        </button>
+
+        <a class="btn-yellow-cta" href="https://wa.me/?text=Ol%C3%A1%21%20Quero%20apoiar%20a%20campanha%20de%20Ron%20do%20Povo%2011333%20para%20Deputado%20Estadual%21" target="_blank" rel="noopener noreferrer" aria-label="Apoie agora">
+          <span>Apoie agora</span>
+        </a>
+
+        <!-- Mobile Drawer Toggle Button -->
+        <button class="header__toggle" type="button" aria-expanded="false" aria-controls="mobile-drawer" data-menu-toggle aria-label="Abrir menu">
+          <span class="bar bar-1"></span>
+          <span class="bar bar-2"></span>
+          <span class="bar bar-3"></span>
+        </button>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- Mobile Drawer Overlay & Menu -->
+  <div class="mobile-drawer-overlay" data-drawer-overlay></div>
+  <aside class="mobile-drawer" id="mobile-drawer" data-menu>
+    <div class="mobile-drawer__header">
+      <div class="brand-badge-combo brand-badge-combo--drawer">
+        <div class="brand-text-wrap">
+          <span class="brand-name">Ron<span class="brand-heart">💚</span>do povo</span>
+          <span class="brand-cargo">DEPUTADO ESTADUAL</span>
+        </div>
+        <span class="brand-number">11333</span>
+      </div>
+      <button class="drawer-close-btn" data-menu-close aria-label="Fechar menu">
+        <svg viewBox="0 0 24 24" width="26" height="26" stroke="currentColor" stroke-width="2.5" fill="none">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+    </div>
+
+    <div class="mobile-drawer__body">
+      <nav class="mobile-drawer__nav">
+        <a href="#inicio" class="mobile-nav-link is-active"><span class="nav-icon">🏠</span> INÍCIO</a>
+        <a href="#agenda" class="mobile-nav-link"><span class="nav-icon">📅</span> AGENDA</a>
+        <a href="#propostas" class="mobile-nav-link"><span class="nav-icon">📋</span> PROPOSTAS</a>
+        <a href="#biografia" class="mobile-nav-link"><span class="nav-icon">👤</span> RON DO POVO</a>
+        <a href="#dor-cronica" class="mobile-nav-link"><span class="nav-icon">🏥</span> SAÚDE & DOR CRÔNICA</a>
+        <a href="#materiais" class="mobile-nav-link"><span class="nav-icon">📦</span> MATERIAIS DE CAMPANHA</a>
+        <a href="#foto-perfil" class="mobile-nav-link mobile-nav-link--highlight"><span class="nav-icon">📸</span> FOTO OFICIAL 11333</a>
+        <a href="#participe" class="mobile-nav-link"><span class="nav-icon">🤝</span> PARTICIPE DA CAMINHADA</a>
+      </nav>
+
+      <div class="mobile-drawer__cta">
+        <a class="btn-zap-full" href="https://wa.me/?text=Ol%C3%A1%20Ron%20do%20Povo%21%20Estou%20junto%20no%2011333%21" target="_blank" rel="noopener noreferrer">
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor">
+            <path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2zm5.8 14.16c-.24.68-1.4 1.34-1.93 1.39-.5.05-1.15.08-3.72-.98-3.28-1.36-5.4-4.69-5.56-4.9-.16-.22-1.32-1.75-1.32-3.34 0-1.59.83-2.37 1.13-2.69.29-.32.64-.4 86-.4.21 0 .43.01.61.02.2.01.46-.08.72.55.27.64.91 2.22.99 2.38.08.16.14.35.03.57-.11.21-.17.34-.33.53-.16.19-.34.42-.48.56-.16.16-.33.34-.14.66.19.32.84 1.39 1.8 2.25 1.24 1.11 2.28 1.45 2.6 1.61.32.16.51.13.7-.08.19-.21.82-.96 1.04-1.29.22-.33.43-.27.72-.16.29.11 1.86.88 2.18 1.04.32.16.53.24.61.38.08.13.08.78-.16 1.46z"/>
+          </svg>
+          <span>Entrar no Zap do Ron 11333</span>
+        </a>
+      </div>
+    </div>
+  </aside>
+
+  <main class="site-main">
+
+    <!-- =========================================================================
+         3. HERO SECTION — O CENTRO DAS ATENÇÕES COM A FOTO EM AZUL
+         Fundo geométrico Azul Royal + Amarelo + Verde com o candidato recortado
+         ========================================================================= -->
+    <section class="hero-reference-section" id="inicio">
+      
+      <!-- Dynamic Geometric Backdrops matching Reference Layout -->
+      <div class="hero-geo-bg" aria-hidden="true">
+        <div class="geo-shape geo-blue"></div>
+        <div class="geo-shape geo-yellow"></div>
+        <div class="geo-shape geo-green"></div>
+      </div>
+
+      <div class="container hero-reference-container">
+        
+        <!-- Left Column: Impact Headline, Slogans, LGPD notice & CTAs -->
+        <div class="hero-left-column reveal">
+          
+          <!-- Top Tag Pill -->
+          <div class="hero-tag-badge">
+            <span class="hero-tag-icon">🇧🇷</span>
+            <span class="hero-tag-text">DEUS É FIEL • A FORÇA DO POVO BAIANO</span>
+          </div>
+
+          <!-- Giant Main Headline -->
+          <h1 class="hero-headline">
+            <span class="hero-headline__sub">A Bahia vai</span>
+            <span class="hero-headline__vencer">vencer</span>
+          </h1>
+
+          <!-- Green Sub-Banner Pill -->
+          <div class="hero-sub-banner">
+            <span>Trabalho de verdade ao lado do povo</span>
+          </div>
+
+          <!-- LGPD / WhatsApp Official Channel Disclaimer -->
+          <p class="hero-disclaimer">
+            <strong>Canal oficial no WhatsApp.</strong> Como o site não solicita dados pessoais nesta etapa, não há consentimento específico a marcar, conforme a LGPD (Lei nº 13.709/2018). Segundo a Meta, seguir o canal <strong>não revela seu número</strong>.
+          </p>
+
+          <!-- Primary & Secondary CTA Buttons -->
+          <div class="hero-cta-group">
+            <a class="hero-btn-zap-yellow" href="https://wa.me/?text=Ol%C3%A1%21%20Quero%20entrar%20no%20Zap%20do%20Ron%20do%20Povo%2011333%21" target="_blank" rel="noopener noreferrer">
+              <span class="btn-arrow">➔</span>
+              <span class="btn-text">Entre no <strong>Zap do Ron</strong></span>
+              <svg class="btn-icon-zap" viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+                <path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2zm5.8 14.16c-.24.68-1.4 1.34-1.93 1.39-.5.05-1.15.08-3.72-.98-3.28-1.36-5.4-4.69-5.56-4.9-.16-.22-1.32-1.75-1.32-3.34 0-1.59.83-2.37 1.13-2.69.29-.32.64-.4 86-.4.21 0 .43.01.61.02.2.01.46-.08.72.55.27.64.91 2.22.99 2.38.08.16.14.35.03.57-.11.21-.17.34-.33.53-.16.19-.34.42-.48.56-.16.16-.33.34-.14.66.19.32.84 1.39 1.8 2.25 1.24 1.11 2.28 1.45 2.6 1.61.32.16.51.13.7-.08.19-.21.82-.96 1.04-1.29.22-.33.43-.27.72-.16.29.11 1.86.88 2.18 1.04.32.16.53.24.61.38.08.13.08.78-.16 1.46z"/>
+              </svg>
+            </a>
+
+            <a class="hero-btn-contribute" href="#participe">
+              <span>CONTRIBUA COM A NOSSA CAMPANHA</span>
+            </a>
+          </div>
+
+        </div>
+
+        <!-- Right Column: Candidate Cutout Centerpiece (Ron do Povo Fazendo o Coração) -->
+        <div class="hero-right-column reveal">
+          <div class="candidate-hero-wrapper">
+            
+            <!-- Glow & Particle effects behind the candidate -->
+            <div class="candidate-glow" aria-hidden="true"></div>
+            
+            <!-- High Definition Cutout of Ron do Povo -->
+            <div class="candidate-image-frame">
+              <picture>
+                <source srcset="images/ron-sem-fundo.png" type="image/png">
+                <img src="images/ron-foto-azul.jpg" alt="Ron do Povo 11333 - Candidato a Deputado Estadual" class="candidate-cutout-img" width="700" height="850">
+              </picture>
+
+              <!-- Floating Number & Badge Overlay on the Photo -->
+              <div class="candidate-badge-overlay">
+                <div class="overlay-brand-wrap">
+                  <span class="overlay-deus">DEUS É FIEL</span>
+                  <div class="overlay-title-line">
+                    <span class="overlay-ron">Ron<span class="overlay-heart">💚</span></span>
+                    <span class="overlay-dopovo">do povo</span>
+                  </div>
+                  <span class="overlay-deputado">DEPUTADO ESTADUAL</span>
+                </div>
+                <div class="overlay-number-wrap">
+                  <span class="overlay-num">11333</span>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Caminhada Sub-Bar -->
+      <div class="hero-bottom-ticker">
+        <div class="container hero-ticker__inner">
+          <span class="ticker-badge">DEUS É FIEL</span>
+          <p class="ticker-text">De vendedor ambulante e mototaxista a vereador 2x eleito e futuro <strong>Deputado Estadual da Bahia</strong>.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         4. JINGLE PLAYER INTERATIVO — OUÇA O JINGLE OFICIAL 11333
+         ========================================================================= -->
+    <section class="jingle-player-section" id="jingle-player-bar">
+      <div class="container">
+        <div class="jingle-player-card reveal">
+          <div class="jingle-player-grid">
+            <div class="jingle-info">
+              <div class="jingle-tag">🎵 JINGLE OFICIAL 11333</div>
+              <h3 class="jingle-title">A Bahia com a Força de Ron do Povo</h3>
+              <p class="jingle-subtitle">Aumente o som e cante junto o jingle oficial da vitória!</p>
+            </div>
+
+            <div class="jingle-controls-wrap">
+              <audio id="audio-jingle" preload="metadata">
+                <source src="images/jingle-ron-11333.mp3" type="audio/mpeg">
+                Seu navegador não suporta áudio HTML5.
+              </audio>
+
+              <button type="button" id="jingle-play-btn" class="jingle-play-btn" aria-label="Reproduzir Jingle Oficial">
+                <svg class="icon-play" viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+                  <polygon points="5 3 19 12 5 21 5 3"></polygon>
+                </svg>
+                <svg class="icon-pause visually-hidden" viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+                  <rect x="6" y="4" width="4" height="16"></rect>
+                  <rect x="14" y="4" width="4" height="16"></rect>
+                </svg>
+              </button>
+
+              <div class="jingle-progress-bar-wrap">
+                <div class="jingle-progress-bar">
+                  <div class="jingle-progress-fill" id="jingle-progress-fill"></div>
+                </div>
+                <div class="jingle-time">
+                  <span id="jingle-cur-time">0:00</span> / <span id="jingle-dur-time">0:00</span>
+                </div>
+              </div>
+
+              <!-- Animated Sound Wave Bars -->
+              <div class="sound-wave-bars" id="sound-wave" aria-hidden="true">
+                <span class="bar bar-1"></span>
+                <span class="bar bar-2"></span>
+                <span class="bar bar-3"></span>
+                <span class="bar bar-4"></span>
+                <span class="bar bar-5"></span>
+              </div>
+
+              <a href="images/jingle-ron-11333.mp3" download="Jingle-Ron-do-Povo-11333.mp3" class="btn-download-jingle" title="Baixar MP3 do Jingle">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                  <polyline points="7 10 12 15 17 10"></polyline>
+                  <line x1="12" y1="15" x2="12" y2="3"></line>
+                </svg>
+                <span>Baixar Jingle</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         5. PROPOSTA EM DESTAQUE (SAÚDE / DOR CRÔNICA)
+         ========================================================================= -->
+    <section class="section section-dor-cronica" id="dor-cronica">
+      <div class="container">
+        <div class="destaque-card-wrapper reveal">
+          <div class="destaque-grid">
+            
+            <div class="destaque-copy">
+              <div class="destaque-pill">
+                <span class="pulse-dot"></span>
+                <span>Proposta Prioritária de Campanha</span>
+              </div>
+              
+              <h2 class="destaque-title">
+                Centro de Cuidado e Tratamento da <span class="text-green-highlight">Dor Crônica</span>
+              </h2>
+              
+              <p class="destaque-text">
+                Uma das principais bandeiras de <strong>Ron do Povo 11333</strong> na Assembleia Legislativa: a criação de centros públicos especializados com atendimento humanizado, fisioterapia contínua, reabilitação física e acesso facilitado a terapias para milhares de cidadãos que convivem diariamente com dores crônicas incapacitantes.
+              </p>
+
+              <div class="destaque-features-list">
+                <div class="destaque-feat-item">
+                  <span class="feat-icon-box">🏥</span>
+                  <div>
+                    <strong>Atendimento Multidisciplinar Gratuito</strong>
+                    <p>Médicos, fisioterapeutas, psicólogos e terapeutas focados na qualidade de vida.</p>
+                  </div>
+                </div>
+                
+                <div class="destaque-feat-item">
+                  <span class="feat-icon-box">💊</span>
+                  <div>
+                    <strong>Acesso Rápido a Medicamentos & Tratamentos</strong>
+                    <p>Desburocratização de remédios e procedimentos especializados pelo SUS.</p>
+                  </div>
+                </div>
+
+                <div class="destaque-feat-item">
+                  <span class="feat-icon-box">💚</span>
+                  <div>
+                    <strong>Cuidado Humanizado e Dignidade</strong>
+                    <p>Acolhimento com respeito e escuta ativa para quem mais sofre.</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="destaque-actions">
+                <a class="btn-yellow-cta" href="https://wa.me/?text=Quero%20apoiar%20a%20proposta%20do%20Centro%20de%20Tratamento%20da%20Dor%20Cr%C3%B4nica%20do%20Ron%20do%20Povo%2011333%21" target="_blank" rel="noopener noreferrer">
+                  <span>Apoiar Esta Proposta ➔</span>
+                </a>
+              </div>
+            </div>
+
+            <div class="destaque-visual">
+              <div class="destaque-img-frame">
+                <img src="images/proposta-dor-cronica.jpg" alt="Proposta de Ron do Povo - Centro da Dor Crônica" class="destaque-img" width="650" height="430" loading="lazy">
+                <div class="img-badge-corner">SAÚDE É PRIORIDADE</div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         6. BIOGRAFIA & TRAJETÓRIA — QUEM É RON DO POVO
+         ========================================================================= -->
+    <section class="section section-biografia" id="biografia">
+      <div class="container">
+        
+        <div class="section-title-wrap text-center reveal">
+          <span class="section-badge-sub">HISTÓRIA DE SUPERAÇÃO</span>
+          <h2 class="section-main-title">Quem é <span class="text-blue-highlight">Ron do Povo?</span></h2>
+          <p class="section-subtitle-text">Ronaldo Almeida Caribé — Nascido em Feira de Santana, Bahia, em 24 de janeiro de 1986.</p>
+        </div>
+
+        <div class="bio-main-card reveal">
+          <div class="bio-grid">
+            <div class="bio-image-col">
+              <div class="bio-photo-card">
+                <img src="images/ron-foto-azul.jpg" alt="Ronaldo Almeida Caribé - Ron do Povo 11333" class="bio-candidate-photo" width="450" height="550" loading="lazy">
+                <div class="bio-photo-tag">
+                  <strong>Ron do Povo 11333</strong>
+                  <span>Deus é Fiel</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="bio-text-col">
+              <div class="bio-quote-badge">
+                <em>"A nossa força vem de Deus, do trabalho honesto e do carinho de cada família baiana."</em>
+              </div>
+
+              <p class="bio-p">
+                Ronaldo Almeida Caribé, popularmente conhecido como <strong>Ron do Povo</strong>, nasceu e cresceu em Feira de Santana. De origem humilde, começou a trabalhar muito jovem para contribuir com o sustento da família.
+              </p>
+
+              <div class="bio-highlight-callout">
+                <h4>Trabalho honesto desde a base:</h4>
+                <p>Foi <strong>vendedor ambulante</strong> nas feiras e ruas da cidade e trabalhou como <strong>mototaxista</strong>, vivenciando na prática as lutas, as dificuldades de transporte e as necessidades reais da população trabalhadora.</p>
+              </div>
+
+              <p class="bio-p">
+                Empreendedor no setor de alimentação, Ron transformou a sua relação diária com a comunidade em vocação pública. Casado com <strong>Chirlaine Venas</strong> e pai exemplar, ingressou na política para ser a voz de quem não tem vez.
+              </p>
+
+              <p class="bio-p">
+                Foi eleito vereador de Feira de Santana em 2016 e reeleito em 2020 com expressiva votação popular, destacando-se pela atuação nas comunidades, fiscalização da saúde pública e defesa dos trabalhadores autônomos.
+              </p>
+
+              <div class="bio-actions-row">
+                <a href="https://www.feiradesantana.ba.leg.br/ron-do-povo" target="_blank" rel="noopener noreferrer" class="btn-outline-blue">
+                  <span>Ver Atuação na Câmara Municipal ↗</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Trajetória em 4 Pilares -->
+        <div class="trajetoria-pillars-grid reveal">
+          <div class="pillar-card">
+            <div class="pillar-icon">🛵</div>
+            <h3>Origem & Suor</h3>
+            <p>Trabalhou como vendedor ambulante e mototaxista, conhecendo cada bairro e cada dificuldade da gente humilde.</p>
+          </div>
+
+          <div class="pillar-card">
+            <div class="pillar-icon">🛒</div>
+            <h3>Comércio & Emprego</h3>
+            <p>Comerciante de alimentos, entende a importância de apoiar os microempreendedores e feirantes que sustentam famílias.</p>
+          </div>
+
+          <div class="pillar-card">
+            <div class="pillar-icon">🏛️</div>
+            <h3>Vereador 2x Eleito</h3>
+            <p>Eleito em 2016 e reeleito em 2020 na 2ª maior cidade da Bahia, com trabalho presente e fiscalização diária.</p>
+          </div>
+
+          <div class="pillar-card">
+            <div class="pillar-icon">🙏</div>
+            <h3>Fé em Deus & Família</h3>
+            <p>Casado com Chirlaine Venas, cristão convicto de que Deus é fiel para abrir portas e abençoar a nossa caminhada.</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         7. COMPROMISSOS & BANDEIRAS (PLANO DE TRABALHO)
+         ========================================================================= -->
+    <section class="section section-propostas" id="propostas">
+      <div class="container">
+        
+        <div class="section-title-wrap text-center reveal">
+          <span class="section-badge-sub">PLANO DE TRABALHO</span>
+          <h2 class="section-main-title">Compromissos pela <span class="text-green-highlight">Bahia</span></h2>
+          <p class="section-subtitle-text">Propostas reais e pés no chão para melhorar a vida do trabalhador baiano.</p>
+        </div>
+
+        <div class="propostas-cards-grid reveal">
+          
+          <div class="prop-box">
+            <div class="prop-icon-header">
+              <span class="prop-icon">🏥</span>
+              <span class="prop-num">01</span>
+            </div>
+            <h3>Saúde Humanizada & Dor Crônica</h3>
+            <p>Criação de centros especializados no tratamento da dor crônica, fortalecimento das UPAs, redução das filas de regulação e garantia de remédios nos postos.</p>
+          </div>
+
+          <div class="prop-box">
+            <div class="prop-icon-header">
+              <span class="prop-icon">🛣️</span>
+              <span class="prop-num">02</span>
+            </div>
+            <h3>Infraestrutura nos Bairros</h3>
+            <p>Pavimentação asfáltica, iluminação pública de LED, saneamento básico e drenagem nas periferias e distritos esquecidos.</p>
+          </div>
+
+          <div class="prop-box">
+            <div class="prop-icon-header">
+              <span class="prop-icon">💼</span>
+              <span class="prop-num">03</span>
+            </div>
+            <h3>Valorização dos Autônomos</h3>
+            <p>Projetos de incentivo fiscal, linhas de microcrédito e dignidade para mototaxistas, motoristas por aplicativo, feirantes e ambulantes.</p>
+          </div>
+
+          <div class="prop-box">
+            <div class="prop-icon-header">
+              <span class="prop-icon">⚽</span>
+              <span class="prop-num">04</span>
+            </div>
+            <h3>Esporte & Cidadania Jovem</h3>
+            <p>Reforma de campos de várzea, construção de praças esportivas e apoio a escolinhas comunitárias para tirar jovens da vulnerabilidade.</p>
+          </div>
+
+          <div class="prop-box">
+            <div class="prop-icon-header">
+              <span class="prop-icon">🎓</span>
+              <span class="prop-num">05</span>
+            </div>
+            <h3>Educação & Cursos Técnicos</h3>
+            <p>Expansão do ensino profissionalizante integrado e transporte escolar digno para os estudantes dos distritos e zona rural.</p>
+          </div>
+
+          <div class="prop-box">
+            <div class="prop-icon-header">
+              <span class="prop-icon">🛡️</span>
+              <span class="prop-num">06</span>
+            </div>
+            <h3>Segurança & Iluminação</h3>
+            <p>Integração das forças de segurança, rondas comunitárias nos bairros e videomonitoramento inteligente para proteção do cidadão.</p>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         8. GERADOR DE FOTO DE PERFIL 11333 (MOLDURA OFICIAL)
+         ========================================================================= -->
+    <section class="section section-moldura" id="foto-perfil">
+      <div class="container">
+        
+        <div class="moldura-card-panel reveal">
+          <div class="moldura-grid">
+            
+            <div class="moldura-copy">
+              <div class="pill-badge-gold">
+                <span>📸 GERADOR DE FOTO DE APOIO</span>
+              </div>
+
+              <h2 class="moldura-title">
+                Faça sua foto oficial com a moldura <span class="text-yellow">11333</span>
+              </h2>
+
+              <p class="moldura-desc">
+                Mostre o seu apoio a Ron do Povo! Carregue sua foto favorita, veja o resultado em tempo real com a moldura oficial e baixe sua foto personalizada para colocar no WhatsApp, Instagram e Facebook!
+              </p>
+
+              <div class="moldura-steps">
+                <div class="step-item">
+                  <span class="step-num">1</span>
+                  <span>Clique no botão abaixo para escolher uma foto da sua galeria.</span>
+                </div>
+                <div class="step-item">
+                  <span class="step-num">2</span>
+                  <span>Ajuste e visualize sua imagem já emoldurada.</span>
+                </div>
+                <div class="step-item">
+                  <span class="step-num">3</span>
+                  <span>Baixe gratuitamente e compartilhe nas suas redes sociais!</span>
+                </div>
+              </div>
+
+              <div class="moldura-controls">
+                <label for="user-photo-input" class="btn-yellow-cta btn-upload-photo">
+                  <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                    <polyline points="17 8 12 3 7 8"></polyline>
+                    <line x1="12" y1="3" x2="12" y2="15"></line>
+                  </svg>
+                  <span>1. Escolher Minha Foto</span>
+                </label>
+                <input type="file" id="user-photo-input" accept="image/*" class="visually-hidden">
+
+                <button type="button" id="download-framed-photo" class="btn-download-frame" disabled>
+                  <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                    <polyline points="7 10 12 15 17 10"></polyline>
+                    <line x1="12" y1="15" x2="12" y2="3"></line>
+                  </svg>
+                  <span>2. Baixar Foto com Moldura</span>
+                </button>
+              </div>
+
+              <p class="moldura-hint">🔒 Suas fotos são processadas no seu próprio navegador e não são salvas em servidores.</p>
+            </div>
+
+            <div class="moldura-visual">
+              <div class="canvas-preview-wrapper">
+                <canvas id="photo-frame-canvas" width="600" height="600" class="canvas-element"></canvas>
+                
+                <!-- Placeholder overlay before image upload -->
+                <div id="canvas-placeholder-overlay" class="canvas-placeholder-overlay">
+                  <img src="images/moldura-foto-perfil.png" alt="Moldura Oficial Ron 11333" class="moldura-sample-img" width="360" height="360">
+                  <div class="placeholder-tag">
+                    <span>👆 Clique no botão acima para aplicar sua foto</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         9. MATERIAIS DE CAMPANHA (HUB DE DOWNLOADS)
+         ========================================================================= -->
+    <section class="section section-materiais" id="materiais">
+      <div class="container">
+        
+        <div class="section-title-wrap text-center reveal">
+          <span class="section-badge-sub">MATERIAIS OFICIAIS</span>
+          <h2 class="section-main-title">Baixe os <span class="text-blue-highlight">Materiais da Campanha</span></h2>
+          <p class="section-subtitle-text">Compartilhe com a sua família, amigos e vizinhos a força de Ron do Povo 11333.</p>
+        </div>
+
+        <div class="materiais-grid reveal">
+          
+          <div class="material-card">
+            <div class="material-icon">🎵</div>
+            <h4>Jingle Oficial MP3</h4>
+            <p>Música oficial da campanha para tocar no paredão, carro de som e reuniões.</p>
+            <a href="images/jingle-ron-11333.mp3" download="Jingle-Ron-11333.mp3" class="material-btn">Baixar Áudio MP3 ↓</a>
+          </div>
+
+          <div class="material-card">
+            <div class="material-icon">📱</div>
+            <h4>Santinho Digital 11333</h4>
+            <p>Arte digital compacta otimizada para envio rápido no WhatsApp e redes sociais.</p>
+            <a href="images/ron-foto-azul.jpg" download="Santinho-Ron-do-Povo-11333.jpg" class="material-btn">Baixar Santinho ↓</a>
+          </div>
+
+          <div class="material-card">
+            <div class="material-icon">🖼️</div>
+            <h4>Moldura de Foto PNG</h4>
+            <p>Moldura oficial transparente de alta resolução para montagens e fotos de perfil.</p>
+            <a href="images/moldura-foto-perfil.png" download="Moldura-Oficial-Ron-11333.png" class="material-btn">Baixar Moldura ↓</a>
+          </div>
+
+          <div class="material-card">
+            <div class="material-icon">💬</div>
+            <h4>Figurinhas de WhatsApp</h4>
+            <p>Pacote oficial de figurinhas (stickers) divertidas e de apoio para o seu WhatsApp.</p>
+            <a href="https://wa.me/?text=Ol%C3%A1%21%20Quero%20o%20pacote%20de%20figurinhas%20do%20Ron%20do%20Povo%2011333%21" target="_blank" rel="noopener noreferrer" class="material-btn">Pedir no Zap →</a>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         10. AGENDA & COMPROMISSOS
+         ========================================================================= -->
+    <section class="section section-agenda" id="agenda">
+      <div class="container">
+        
+        <div class="section-title-wrap text-center reveal">
+          <span class="section-badge-sub">CAMINHADA & DIÁLOGO</span>
+          <h2 class="section-main-title">Agenda de <span class="text-green-highlight">Visitas e Reuniões</span></h2>
+          <p class="section-subtitle-text">Acompanhe onde Ron do Povo 11333 estará ouvindo a população.</p>
+        </div>
+
+        <div class="agenda-timeline reveal">
+          
+          <div class="agenda-item">
+            <div class="agenda-date">
+              <span class="date-day">SÁB</span>
+              <span class="date-hour">09:00</span>
+            </div>
+            <div class="agenda-details">
+              <h4>Caminhada nos Bairros de Feira de Santana</h4>
+              <p>Visita aos comerciantes, ambulantes e feirantes com diálogo aberto sobre demandas locais.</p>
+              <span class="agenda-local">📍 Feira de Santana — Bahia</span>
+            </div>
+          </div>
+
+          <div class="agenda-item">
+            <div class="agenda-date">
+              <span class="date-day">DOM</span>
+              <span class="date-hour">15:00</span>
+            </div>
+            <div class="agenda-details">
+              <h4>Plenária Popular de Saúde & Dor Crônica</h4>
+              <p>Reunião com lideranças comunitárias e profissionais da saúde para debater o Centro de Tratamento da Dor.</p>
+              <span class="agenda-local">📍 Região Metropolitana & Distritos</span>
+            </div>
+          </div>
+
+          <div class="agenda-item">
+            <div class="agenda-date">
+              <span class="date-day">TER</span>
+              <span class="date-hour">19:30</span>
+            </div>
+            <div class="agenda-details">
+              <h4>Live Oficial no Instagram & Facebook</h4>
+              <p>Transmissão ao vivo para prestação de contas, apresentação de propostas e resposta às perguntas do povo.</p>
+              <span class="agenda-local">🌐 Transmissão Online</span>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         11. PARTICIPE & SEJA VOLUNTÁRIO
+         ========================================================================= -->
+    <section class="section section-participe" id="participe">
+      <div class="container">
+        
+        <div class="participe-box reveal">
+          <div class="participe-grid">
+            
+            <div class="participe-copy">
+              <span class="section-badge-sub" style="color: #ffd200;">JUNTE-SE A NÓS</span>
+              <h2 class="participe-title">Venha fazer parte da caminhada da vitória!</h2>
+              <p class="participe-desc">
+                Cadastre-se como voluntário, receba materiais na sua casa e ajude a multiplicar a mensagem de Ron do Povo 11333 em toda a Bahia.
+              </p>
+              
+              <div class="participe-features">
+                <div class="p-feat">✨ Receba notícias exclusivas no Zap</div>
+                <div class="p-feat">✨ Participe das plenárias e caminhadas</div>
+                <div class="p-feat">✨ Envie sugestões diretas para o mandato</div>
+              </div>
+            </div>
+
+            <div class="participe-form-wrapper">
+              <form class="participe-form" id="form-participe" onsubmit="event.preventDefault(); alert('Obrigado pelo apoio! Em instantes nossa equipe entrará em contato via WhatsApp.');">
+                <h3>Cadastre-se como Apoiador</h3>
+                
+                <div class="form-group">
+                  <label for="apoio-nome">Seu Nome Completo</label>
+                  <input type="text" id="apoio-nome" placeholder="Digite seu nome" required>
+                </div>
+
+                <div class="form-group">
+                  <label for="apoio-whatsapp">Seu WhatsApp</label>
+                  <input type="tel" id="apoio-whatsapp" placeholder="(75) 99999-9999" required>
+                </div>
+
+                <div class="form-group">
+                  <label for="apoio-cidade">Sua Cidade / Bairro</label>
+                  <input type="text" id="apoio-cidade" placeholder="Ex: Feira de Santana - Centro" required>
+                </div>
+
+                <button type="submit" class="btn-yellow-cta btn-submit-full">
+                  <span>Quero ser Voluntário 11333 ➔</span>
+                </button>
+              </form>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- =========================================================================
+       12. FLOATING ACTION ELEMENTS (Acessibilidade & Cookies)
+       ========================================================================= -->
+  <!-- Floating Accessibility Side Button (Igual à Referência) -->
+  <button type="button" class="floating-access-badge" id="floating-access-btn" aria-label="Abrir Menu de Acessibilidade">
+    <span>Acessibilidade</span>
+    <span class="access-icon">🧏</span>
+  </button>
+
+  <!-- Floating Cookie Management Pill (Igual à Referência) -->
+  <button type="button" class="floating-cookie-pill" id="open-cookie-modal" aria-label="Gerenciar preferências de cookies">
+    <span>Gerenciar cookies</span>
+  </button>
+
+  <!-- Sticky Bottom Bar for Mobile -->
+  <aside class="mobile-sticky-bar" aria-label="Ações Rápidas">
+    <a class="mobile-sticky-btn mobile-sticky-btn--zap" href="https://wa.me/?text=Ol%C3%A1%20Ron%20do%20Povo%21%20Quero%20apoiar%20o%2011333%21" target="_blank" rel="noopener noreferrer">
+      <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+        <path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2zm5.8 14.16c-.24.68-1.4 1.34-1.93 1.39-.5.05-1.15.08-3.72-.98-3.28-1.36-5.4-4.69-5.56-4.9-.16-.22-1.32-1.75-1.32-3.34 0-1.59.83-2.37 1.13-2.69.29-.32.64-.4 86-.4.21 0 .43.01.61.02.2.01.46-.08.72.55.27.64.91 2.22.99 2.38.08.16.14.35.03.57-.11.21-.17.34-.33.53-.16.19-.34.42-.48.56-.16.16-.33.34-.14.66.19.32.84 1.39 1.8 2.25 1.24 1.11 2.28 1.45 2.6 1.61.32.16.51.13.7-.08.19-.21.82-.96 1.04-1.29.22-.33.43-.27.72-.16.29.11 1.86.88 2.18 1.04.32.16.53.24.61.38.08.13.08.78-.16 1.46z"/>
+      </svg>
+      <span>Zap do Ron</span>
+    </a>
+    
+    <a class="mobile-sticky-btn mobile-sticky-btn--jingle" href="#jingle-player-bar">
+      <span>🎵 Jingle</span>
+    </a>
+
+    <a class="mobile-sticky-btn mobile-sticky-btn--foto" href="#foto-perfil">
+      <span>📸 Foto 11333</span>
+    </a>
+  </aside>
+
+  <!-- =========================================================================
+       13. SEARCH & COOKIE MODALS
+       ========================================================================= -->
+  <!-- Search Modal -->
+  <div class="modal-overlay" id="search-modal" aria-hidden="true">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3>Pesquisar no Site Oficial</h3>
+        <button type="button" class="modal-close-btn" id="close-search-modal" aria-label="Fechar">✕</button>
+      </div>
+      <div class="modal-body">
+        <input type="text" id="search-input" placeholder="Digite propostas, dor crônica, jingle..." class="search-modal-input">
+        <div class="search-results-list" id="search-results">
+          <p class="search-hint">Sugestões rápidas:</p>
+          <div class="search-quick-tags">
+            <a href="#dor-cronica" class="quick-tag">🏥 Dor Crônica</a>
+            <a href="#biografia" class="quick-tag">👤 Biografia</a>
+            <a href="#propostas" class="quick-tag">📋 Compromissos</a>
+            <a href="#foto-perfil" class="quick-tag">📸 Foto com Moldura</a>
+            <a href="#materiais" class="quick-tag">🎵 Jingle MP3</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Cookie Modal -->
+  <div class="modal-overlay" id="cookie-modal" aria-hidden="true">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3>Preferências de Cookies</h3>
+        <button type="button" class="modal-close-btn" id="close-cookie-modal" aria-label="Fechar">✕</button>
+      </div>
+      <div class="modal-body">
+        <p>Este site utiliza apenas cookies estritamente necessários para o funcionamento correto das preferências de acessibilidade e desempenho.</p>
+        <div class="cookie-options-list">
+          <label class="cookie-toggle-label">
+            <input type="checkbox" checked disabled>
+            <span><strong>Cookies Necessários</strong> (Sempre ativos para navegação e acessibilidade)</span>
+          </label>
+          <label class="cookie-toggle-label">
+            <input type="checkbox" id="cookie-analytics" checked>
+            <span><strong>Métricas Anônimas</strong> (Ajudam a melhorar a velocidade do portal)</span>
+          </label>
+        </div>
+        <button type="button" class="btn-yellow-cta" id="btn-save-cookies" style="width: 100%; margin-top: 1rem;">
+          <span>Salvar Preferências</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- =========================================================================
+       14. FOOTER (Padrão Oficial e Transparência Eleitoral)
+       ========================================================================= -->
+  <footer class="footer" id="rodape">
+    <div class="container footer__container">
+      
+      <div class="footer__main">
+        <div class="footer__brand-col">
+          <div class="brand-badge-combo brand-badge-combo--footer">
+            <div class="brand-text-wrap">
+              <span class="brand-name">Ron<span class="brand-heart">💚</span>do povo</span>
+              <span class="brand-cargo">DEPUTADO ESTADUAL</span>
+            </div>
+            <span class="brand-number">11333</span>
+          </div>
+          <p class="footer__tagline">DEUS É FIEL • A BAHIA VAI VENCER</p>
+          <div class="footer__vice-box">
+            <span>Candidato: <strong>Ronaldo Almeida Caribé (Ron do Povo)</strong></span>
+            <span>Origem: <strong>Feira de Santana — Bahia</strong></span>
+          </div>
+        </div>
+
+        <div class="footer__links-col">
+          <h4>Navegação</h4>
+          <ul>
+            <li><a href="#inicio">Início</a></li>
+            <li><a href="#agenda">Agenda de Visitas</a></li>
+            <li><a href="#dor-cronica">Proposta Dor Crônica</a></li>
+            <li><a href="#biografia">Biografia de Ron</a></li>
+            <li><a href="#propostas">Compromissos</a></li>
+            <li><a href="#foto-perfil">Gerador de Foto 11333</a></li>
+          </ul>
+        </div>
+
+        <div class="footer__links-col">
+          <h4>Canais Oficiais</h4>
+          <ul>
+            <li><a href="https://wa.me/?text=Ol%C3%A1%21%20Quero%20participar%20do%20Zap%20do%20Ron%2011333%21" target="_blank" rel="noopener noreferrer">Zap Oficial do Ron</a></li>
+            <li><a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">Instagram Oficial</a></li>
+            <li><a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer">Facebook Oficial</a></li>
+            <li><a href="https://www.feiradesantana.ba.leg.br/ron-do-povo" target="_blank" rel="noopener noreferrer">Câmara de Feira de Santana</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer__bottom">
+        <p class="footer__legal">
+          ELEIÇÃO 2026 RONALDO ALMEIDA CARIBÉ — DEPUTADO ESTADUAL 11333 — DEUS É FIEL
+        </p>
+        <p class="footer__copy">
+          © 2026 Ron do Povo 11333. Todos os direitos reservados.
+        </p>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- Main JavaScript File -->
+  <script src="script.js"></script>
+</body>
+</html>
