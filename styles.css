@@ -471,6 +471,37 @@ img, picture {
   box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
 }
 
+.mobile-drawer__socials {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-top: 0.85rem;
+}
+
+.drawer-social-link {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.65rem 1rem;
+  border-radius: var(--radius-md);
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  transition: var(--transition);
+}
+
+.drawer-social-link--ig:hover {
+  background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+  color: #ffffff;
+}
+
+.drawer-social-link--fb:hover {
+  background-color: #1877f2;
+  color: #ffffff;
+}
+
 /* ==========================================================================
    5. HERO REFERENCE SECTION — O CENTRO DAS ATENÇÕES COM A FOTO EM AZUL
    ========================================================================== */
@@ -1709,6 +1740,49 @@ img, picture {
   font-size: 0.82rem;
   font-weight: 700;
   color: var(--color-hero-blue);
+  display: block;
+  margin-top: 0.35rem;
+}
+
+.agenda-live-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin: 0.65rem 0;
+}
+
+.agenda-live-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.8rem;
+  font-weight: 800;
+  padding: 0.4rem 0.85rem;
+  border-radius: var(--radius-full);
+  transition: var(--transition);
+}
+
+.agenda-live-btn--ig {
+  background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+  color: #ffffff;
+  box-shadow: 0 2px 8px rgba(220, 39, 67, 0.3);
+}
+
+.agenda-live-btn--ig:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(220, 39, 67, 0.45);
+}
+
+.agenda-live-btn--fb {
+  background-color: #1877f2;
+  color: #ffffff;
+  box-shadow: 0 2px 8px rgba(24, 119, 242, 0.3);
+}
+
+.agenda-live-btn--fb:hover {
+  background-color: #0d65d9;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(24, 119, 242, 0.45);
 }
 
 /* Participe Form Box */
