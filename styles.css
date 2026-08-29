@@ -290,6 +290,18 @@ img, picture {
   color: var(--color-yellow);
 }
 
+.header__nav .nav-link--fala-povo {
+  background-color: var(--color-yellow);
+  color: var(--color-hero-blue-dark) !important;
+  font-weight: 800;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+.header__nav .nav-link--fala-povo:hover {
+  background-color: var(--color-yellow-hover);
+  transform: translateY(-1px);
+}
+
 /* Header Actions */
 .header__actions {
   display: flex;
@@ -438,6 +450,12 @@ img, picture {
 .mobile-nav-link.is-active {
   background-color: rgba(0, 0, 0, 0.25);
   color: var(--color-yellow);
+}
+
+.mobile-nav-link--ouvidoria {
+  background: rgba(255, 210, 0, 0.18);
+  color: var(--color-yellow) !important;
+  border: 1px solid rgba(255, 210, 0, 0.4);
 }
 
 .btn-zap-full {
@@ -1790,6 +1808,388 @@ img, picture {
 }
 
 /* ==========================================================================
+   10. OUVIDORIA POPULAR & FALA CIDADÃO (DEMANDAS & MELHORIAS)
+   ========================================================================== */
+.section-ouvidoria {
+  background-color: #f1f5f9;
+  position: relative;
+  overflow: hidden;
+}
+
+[data-theme="dark"] .section-ouvidoria {
+  background-color: #0b1220;
+}
+
+.section-badge-sub--green {
+  background-color: rgba(0, 153, 68, 0.12);
+  color: var(--color-green-dark);
+}
+
+[data-theme="dark"] .section-badge-sub--green {
+  background-color: rgba(37, 226, 93, 0.15);
+  color: var(--color-green-light);
+}
+
+.ouvidoria-card-container {
+  background-color: var(--color-card-bg);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+  overflow: hidden;
+}
+
+[data-theme="dark"] .ouvidoria-card-container {
+  background-color: #131d31;
+  border-color: #1e293b;
+}
+
+.ouvidoria-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.15fr;
+  min-height: 550px;
+}
+
+/* Left Column */
+.ouvidoria-info-col {
+  background: linear-gradient(145deg, #002868 0%, #004bbd 100%);
+  color: #ffffff;
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 1.5rem;
+}
+
+.ouvidoria-badge-destaque {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 0.35rem 0.85rem;
+  border-radius: var(--radius-full);
+  font-size: 0.8rem;
+  font-weight: 800;
+  color: var(--color-yellow);
+  width: fit-content;
+}
+
+.ouvidoria-info-title {
+  font-family: var(--font-heading);
+  font-size: clamp(1.4rem, 2.5vw, 1.85rem);
+  font-weight: 800;
+  line-height: 1.25;
+  color: #ffffff;
+}
+
+.ouvidoria-info-p {
+  font-size: 0.95rem;
+  line-height: 1.65;
+  color: #e2e8f0;
+  font-style: italic;
+}
+
+.ouvidoria-quote-author {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.author-avatar-badge {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background-color: var(--color-green-header);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  flex-shrink: 0;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+}
+
+.ouvidoria-quote-author strong {
+  display: block;
+  font-size: 0.92rem;
+  color: #ffffff;
+}
+
+.ouvidoria-quote-author span {
+  font-size: 0.78rem;
+  color: var(--color-yellow);
+}
+
+/* Quick Select Pills */
+.ouvidoria-quick-select-wrap {
+  margin-top: 0.5rem;
+}
+
+.quick-select-label {
+  display: block;
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: #cbd5e1;
+  margin-bottom: 0.65rem;
+}
+
+.ouvidoria-category-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+}
+
+.cat-pill {
+  background-color: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+  font-size: 0.78rem;
+  font-weight: 700;
+  padding: 0.4rem 0.75rem;
+  border-radius: var(--radius-full);
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.cat-pill:hover {
+  background-color: rgba(255, 255, 255, 0.25);
+  transform: translateY(-1px);
+}
+
+.cat-pill.is-active {
+  background-color: var(--color-yellow);
+  color: var(--color-hero-blue-dark);
+  border-color: var(--color-yellow);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Stats Row */
+.ouvidoria-stats-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.75rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.ostat-item {
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: var(--radius-sm);
+  padding: 0.75rem 0.5rem;
+  text-align: center;
+}
+
+.ostat-number {
+  display: block;
+  font-family: var(--font-heading);
+  font-size: 1.15rem;
+  font-weight: 900;
+  color: var(--color-yellow);
+}
+
+.ostat-label {
+  font-size: 0.68rem;
+  color: #cbd5e1;
+  font-weight: 600;
+}
+
+/* Right Column (Form) */
+.ouvidoria-form-col {
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: var(--color-card-bg);
+}
+
+[data-theme="dark"] .ouvidoria-form-col {
+  background-color: #131d31;
+}
+
+.ouvidoria-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.form-header-box {
+  margin-bottom: 0.5rem;
+}
+
+.form-header-badge {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 1px;
+  color: var(--color-green-header);
+  margin-bottom: 0.35rem;
+}
+
+[data-theme="dark"] .form-header-badge {
+  color: var(--color-green-light);
+}
+
+.form-header-box h4 {
+  font-family: var(--font-heading);
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: var(--color-dark);
+  margin-bottom: 0.35rem;
+}
+
+[data-theme="dark"] .form-header-box h4 {
+  color: #ffffff;
+}
+
+.form-header-box p {
+  font-size: 0.85rem;
+  color: var(--color-muted);
+}
+
+.ouvidoria-fields-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.ouvidoria-fields-grid .form-group {
+  margin-bottom: 0;
+}
+
+.ouvidoria-fields-grid .full-width {
+  grid-column: span 2;
+}
+
+.ouvidoria-fields-grid label {
+  display: block;
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--color-dark);
+  margin-bottom: 0.35rem;
+}
+
+[data-theme="dark"] .ouvidoria-fields-grid label {
+  color: #e2e8f0;
+}
+
+.ouvidoria-fields-grid input,
+.ouvidoria-fields-grid select,
+.ouvidoria-fields-grid textarea {
+  width: 100%;
+  padding: 0.75rem 0.95rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  background-color: var(--color-light-bg);
+  color: var(--color-dark);
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  transition: var(--transition);
+}
+
+[data-theme="dark"] .ouvidoria-fields-grid input,
+[data-theme="dark"] .ouvidoria-fields-grid select,
+[data-theme="dark"] .ouvidoria-fields-grid textarea {
+  background-color: #1e293b;
+  border-color: #334155;
+  color: #ffffff;
+}
+
+.ouvidoria-fields-grid input:focus,
+.ouvidoria-fields-grid select:focus,
+.ouvidoria-fields-grid textarea:focus {
+  outline: none;
+  border-color: var(--color-green-header);
+  box-shadow: 0 0 0 3px rgba(0, 153, 68, 0.2);
+  background-color: #ffffff;
+}
+
+[data-theme="dark"] .ouvidoria-fields-grid input:focus,
+[data-theme="dark"] .ouvidoria-fields-grid select:focus,
+[data-theme="dark"] .ouvidoria-fields-grid textarea:focus {
+  background-color: #0f172a;
+}
+
+.ouvidoria-fields-grid textarea {
+  resize: vertical;
+  min-height: 90px;
+}
+
+.textarea-hint {
+  display: block;
+  font-size: 0.74rem;
+  color: var(--color-muted);
+  margin-top: 0.3rem;
+}
+
+.ouvidoria-form-actions {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 0.85rem;
+  margin-top: 0.5rem;
+}
+
+.btn-zap-submit {
+  background-color: #25d366;
+  color: #ffffff;
+  font-family: var(--font-heading);
+  font-size: 0.92rem;
+  font-weight: 800;
+  padding: 0.85rem 1.2rem;
+  border-radius: var(--radius-full);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  box-shadow: 0 4px 14px rgba(37, 211, 102, 0.35);
+  transition: var(--transition);
+  cursor: pointer;
+  border: none;
+}
+
+.btn-zap-submit:hover {
+  background-color: #20ba59;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(37, 211, 102, 0.45);
+}
+
+.btn-online-submit {
+  background-color: var(--color-light-bg);
+  border: 1.5px solid var(--color-hero-blue);
+  color: var(--color-hero-blue);
+  font-family: var(--font-heading);
+  font-size: 0.88rem;
+  font-weight: 800;
+  padding: 0.85rem 1.2rem;
+  border-radius: var(--radius-full);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--transition);
+  cursor: pointer;
+}
+
+.btn-online-submit:hover {
+  background-color: var(--color-hero-blue);
+  color: #ffffff;
+}
+
+[data-theme="dark"] .btn-online-submit {
+  background-color: #1e293b;
+  border-color: #3b82f6;
+  color: #60a5fa;
+}
+
+[data-theme="dark"] .btn-online-submit:hover {
+  background-color: #3b82f6;
+  color: #ffffff;
+}
+
+.ouvidoria-form-footer {
+  font-size: 0.74rem;
+  color: var(--color-muted);
+  text-align: center;
+}
+
+/* ==========================================================================
    10. FLOATING ACTION BADGES (Acessibilidade & Cookies)
    ========================================================================== */
 /* Lateral Floating Accessibility (Igual à Referência) */
@@ -1886,8 +2286,13 @@ img, picture {
   color: var(--color-hero-blue-dark);
 }
 
+.mobile-sticky-btn--ouvidoria {
+  background-color: var(--color-green-dark);
+  color: #ffffff;
+}
+
 /* ==========================================================================
-   11. MODALS (Busca & Cookies)
+   11. MODALS (Busca, Cookies & Protocolo de Demanda)
    ========================================================================== */
 .modal-overlay {
   position: fixed;
@@ -1992,6 +2397,158 @@ img, picture {
   gap: 0.75rem;
   font-size: 0.9rem;
   cursor: pointer;
+}
+
+/* Modal Protocol Card */
+.modal-card--protocol {
+  max-width: 480px;
+  text-align: center;
+  border: 2px solid #25d366;
+}
+
+.protocol-header-badge {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 1.25rem;
+}
+
+.protocol-icon-check {
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  background-color: #25d366;
+  color: #ffffff;
+  font-size: 1.8rem;
+  font-weight: 900;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0.85rem;
+  box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+}
+
+.protocol-header-badge h3 {
+  font-family: var(--font-heading);
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: var(--color-dark);
+  margin-bottom: 0.35rem;
+}
+
+[data-theme="dark"] .protocol-header-badge h3 {
+  color: #ffffff;
+}
+
+.protocol-header-badge p {
+  font-size: 0.88rem;
+  color: var(--color-slate);
+}
+
+[data-theme="dark"] .protocol-header-badge p {
+  color: #94a3b8;
+}
+
+.protocol-body-box {
+  background-color: var(--color-light-bg);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 1.25rem;
+  margin-bottom: 1.25rem;
+  text-align: left;
+}
+
+[data-theme="dark"] .protocol-body-box {
+  background-color: #0f172a;
+  border-color: #1e293b;
+}
+
+.protocol-number-tag {
+  background: linear-gradient(135deg, #002868, #004bbd);
+  color: #ffffff;
+  border-radius: var(--radius-sm);
+  padding: 1rem;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.p-tag-label {
+  display: block;
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 1px;
+  color: var(--color-yellow);
+  margin-bottom: 0.25rem;
+}
+
+.p-tag-code {
+  font-family: var(--font-heading);
+  font-size: 1.65rem;
+  font-weight: 900;
+  letter-spacing: 1px;
+  margin-bottom: 0.5rem;
+}
+
+.btn-copy-code {
+  background-color: rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  color: #ffffff;
+  font-size: 0.78rem;
+  font-weight: 700;
+  padding: 0.35rem 0.85rem;
+  border-radius: var(--radius-full);
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.btn-copy-code:hover {
+  background-color: var(--color-yellow);
+  color: var(--color-hero-blue-dark);
+  border-color: var(--color-yellow);
+}
+
+.protocol-details-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  font-size: 0.86rem;
+}
+
+.p-detail-item {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px dashed var(--color-border);
+  padding-bottom: 0.4rem;
+}
+
+[data-theme="dark"] .p-detail-item {
+  border-color: #334155;
+}
+
+.p-detail-item span {
+  color: var(--color-muted);
+}
+
+.p-detail-item strong {
+  color: var(--color-dark);
+}
+
+[data-theme="dark"] .p-detail-item strong {
+  color: #ffffff;
+}
+
+.status-badge-ok {
+  background-color: #dcfce7;
+  color: #15803d;
+  font-size: 0.75rem;
+  font-weight: 800;
+  padding: 0.2rem 0.55rem;
+  border-radius: var(--radius-full);
+}
+
+[data-theme="dark"] .status-badge-ok {
+  background-color: #064e3b;
+  color: #86efac;
 }
 
 /* ==========================================================================
@@ -2178,9 +2735,15 @@ img, picture {
   .bio-grid,
   .moldura-grid,
   .participe-grid,
+  .ouvidoria-grid,
   .footer__main {
     grid-template-columns: 1fr;
     gap: 2.5rem;
+  }
+
+  .ouvidoria-info-col,
+  .ouvidoria-form-col {
+    padding: 2.25rem 1.75rem;
   }
 
   .bio-candidate-photo {
@@ -2669,6 +3232,55 @@ img, picture {
   .participe-form-wrapper {
     padding: 1.5rem 1rem;
     border-radius: var(--radius-md);
+  }
+
+  /* Ouvidoria Section on Mobile */
+  .ouvidoria-card-container {
+    border-radius: var(--radius-md);
+  }
+
+  .ouvidoria-info-col {
+    padding: 1.5rem 1rem;
+    gap: 1.25rem;
+  }
+
+  .ouvidoria-form-col {
+    padding: 1.5rem 1rem;
+  }
+
+  .ouvidoria-info-title {
+    font-size: 1.45rem;
+  }
+
+  .ouvidoria-fields-grid {
+    grid-template-columns: 1fr;
+    gap: 0.85rem;
+  }
+
+  .ouvidoria-fields-grid .full-width {
+    grid-column: span 1;
+  }
+
+  .ouvidoria-form-actions {
+    grid-template-columns: 1fr;
+    gap: 0.65rem;
+  }
+
+  .ouvidoria-stats-row {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.4rem;
+  }
+
+  .ostat-item {
+    padding: 0.5rem 0.25rem;
+  }
+
+  .ostat-number {
+    font-size: 0.95rem;
+  }
+
+  .ostat-label {
+    font-size: 0.6rem;
   }
 
   /* Footer on Mobile */

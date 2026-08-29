@@ -287,9 +287,202 @@ document.addEventListener('DOMContentLoaded', () => {
   window.addEventListener('click', (e) => {
     if (e.target === searchModal) searchModal.classList.remove('is-active');
     if (e.target === cookieModal) cookieModal.classList.remove('is-active');
+    if (e.target === protocolModal) {
+      protocolModal.classList.remove('is-active');
+      protocolModal.setAttribute('aria-hidden', 'true');
+    }
   });
 
-  // --- 6. SCROLL SPY & REVEALS ---
+  // --- 6. OUVIDORIA & FALA CIDADÃO (DEMANDAS & PENDÊNCIAS) ---
+  const formOuvidoria = document.getElementById('form-ouvidoria');
+  const catPills = document.querySelectorAll('.cat-pill');
+  const catSelect = document.getElementById('demanda-categoria');
+  const inputNome = document.getElementById('demanda-nome');
+  const inputWhatsapp = document.getElementById('demanda-whatsapp');
+  const inputBairro = document.getElementById('demanda-cidade-bairro');
+  const inputRua = document.getElementById('demanda-rua');
+  const inputDescricao = document.getElementById('demanda-descricao');
+  const btnSubmitOnline = document.getElementById('btn-submit-online');
+
+  // Protocol Modal elements
+  const protocolModal = document.getElementById('protocol-modal');
+  const closeProtocolBtn = document.getElementById('close-protocol-modal');
+  const modalProtocolCode = document.getElementById('modal-protocol-code');
+  const modalProtocolNome = document.getElementById('modal-protocol-nome');
+  const modalProtocolBairro = document.getElementById('modal-protocol-bairro');
+  const modalProtocolCategoria = document.getElementById('modal-protocol-categoria');
+  const btnCopyProtocol = document.getElementById('btn-copy-protocol');
+  const copyText = document.getElementById('copy-text');
+  const btnShareWhatsappProtocol = document.getElementById('btn-share-whatsapp-protocol');
+
+  // Phone mask helper
+  function maskPhone(input) {
+    if (!input) return;
+    input.addEventListener('input', (e) => {
+      let value = e.target.value.replace(/\D/g, '');
+      if (value.length > 11) value = value.slice(0, 11);
+      if (value.length > 6) {
+        value = `(${value.slice(0, 2)}) ${value.slice(2, 7)}-${value.slice(7)}`;
+      } else if (value.length > 2) {
+        value = `(${value.slice(0, 2)}) ${value.slice(2)}`;
+      } else if (value.length > 0) {
+        value = `(${value}`;
+      }
+      e.target.value = value;
+    });
+  }
+
+  maskPhone(inputWhatsapp);
+  maskPhone(document.getElementById('apoio-whatsapp'));
+
+  // Quick category pills synchronization
+  catPills.forEach(pill => {
+    pill.addEventListener('click', () => {
+      catPills.forEach(p => p.classList.remove('is-active'));
+      pill.classList.add('is-active');
+      const catVal = pill.getAttribute('data-cat');
+      if (catSelect && catVal) {
+        catSelect.value = catVal;
+      }
+      inputDescricao?.focus();
+    });
+  });
+
+  catSelect?.addEventListener('change', () => {
+    const selectedVal = catSelect.value;
+    catPills.forEach(pill => {
+      if (pill.getAttribute('data-cat') === selectedVal) {
+        pill.classList.add('is-active');
+      } else {
+        pill.classList.remove('is-active');
+      }
+    });
+  });
+
+  function generateProtocol() {
+    const randomNum = Math.floor(1000 + Math.random() * 9000);
+    return `RON-2026-${randomNum}`;
+  }
+
+  let currentProtocolData = null;
+
+  function showProtocolModal(data) {
+    currentProtocolData = data;
+    if (modalProtocolCode) modalProtocolCode.textContent = data.protocol;
+    if (modalProtocolNome) modalProtocolNome.textContent = data.nome || 'Não informado';
+    if (modalProtocolBairro) modalProtocolBairro.textContent = data.bairro || 'Não informado';
+    if (modalProtocolCategoria) modalProtocolCategoria.textContent = data.categoria || 'Demanda Geral';
+
+    protocolModal?.classList.add('is-active');
+    protocolModal?.setAttribute('aria-hidden', 'false');
+  }
+
+  function validateOuvidoriaForm() {
+    if (!inputNome?.value.trim()) {
+      alert('Por favor, informe seu nome completo.');
+      inputNome?.focus();
+      return false;
+    }
+    if (!inputWhatsapp?.value.trim() || inputWhatsapp.value.trim().length < 10) {
+      alert('Por favor, informe um número de WhatsApp válido com DDD.');
+      inputWhatsapp?.focus();
+      return false;
+    }
+    if (!inputBairro?.value.trim()) {
+      alert('Por favor, informe sua cidade e bairro/distrito.');
+      inputBairro?.focus();
+      return false;
+    }
+    if (!inputDescricao?.value.trim()) {
+      alert('Por favor, descreva a pendência ou o que precisa melhorar na sua cidade.');
+      inputDescricao?.focus();
+      return false;
+    }
+    return true;
+  }
+
+  // Handle WhatsApp submission
+  formOuvidoria?.addEventListener('submit', (e) => {
+    e.preventDefault();
+    if (!validateOuvidoriaForm()) return;
+
+    const protocol = generateProtocol();
+    const nome = inputNome.value.trim();
+    const whatsapp = inputWhatsapp.value.trim();
+    const bairro = inputBairro.value.trim();
+    const categoria = catSelect?.value || 'Demanda Popular';
+    const rua = inputRua?.value.trim() || 'Não especificada';
+    const descricao = inputDescricao.value.trim();
+
+    const data = { protocol, nome, whatsapp, bairro, categoria, rua, descricao };
+
+    // Format WhatsApp message
+    const msg = `*📢 DEMANDA POPULAR — GABINETE DE RON DO POVO 11333*\n` +
+      `*Protocolo:* ${protocol}\n` +
+      `*Cidadão:* ${nome}\n` +
+      `*WhatsApp:* ${whatsapp}\n` +
+      `*Cidade / Bairro:* ${bairro}\n` +
+      `*Área da Demanda:* ${categoria}\n` +
+      `*Rua / Referência:* ${rua}\n\n` +
+      `*Descrição da Pendência / O que precisa melhorar:*\n${descricao}\n\n` +
+      `---\n` +
+      `Enviado pelo Gabinete Popular do Portal Oficial Ron do Povo 11333.`;
+
+    const zapUrl = `https://wa.me/?text=${encodeURIComponent(msg)}`;
+    window.open(zapUrl, '_blank');
+
+    showProtocolModal(data);
+    formOuvidoria.reset();
+  });
+
+  // Handle Direct Online Registration
+  btnSubmitOnline?.addEventListener('click', () => {
+    if (!validateOuvidoriaForm()) return;
+
+    const protocol = generateProtocol();
+    const nome = inputNome.value.trim();
+    const whatsapp = inputWhatsapp.value.trim();
+    const bairro = inputBairro.value.trim();
+    const categoria = catSelect?.value || 'Demanda Popular';
+    const rua = inputRua?.value.trim() || 'Não especificada';
+    const descricao = inputDescricao.value.trim();
+
+    const data = { protocol, nome, whatsapp, bairro, categoria, rua, descricao };
+
+    showProtocolModal(data);
+    formOuvidoria.reset();
+  });
+
+  closeProtocolBtn?.addEventListener('click', () => {
+    protocolModal?.classList.remove('is-active');
+    protocolModal?.setAttribute('aria-hidden', 'true');
+  });
+
+  btnCopyProtocol?.addEventListener('click', () => {
+    if (!modalProtocolCode) return;
+    const textToCopy = modalProtocolCode.textContent;
+    navigator.clipboard.writeText(textToCopy).then(() => {
+      if (copyText) copyText.textContent = 'Copiado! ✓';
+      setTimeout(() => {
+        if (copyText) copyText.textContent = 'Copiar Protocolo 📋';
+      }, 2500);
+    }).catch(() => {
+      alert(`Protocolo: ${textToCopy}`);
+    });
+  });
+
+  btnShareWhatsappProtocol?.addEventListener('click', () => {
+    if (!currentProtocolData) return;
+    const shareMsg = `Acabei de registrar uma demanda para melhorar a minha comunidade no Gabinete Popular de *Ron do Povo 11333*!\n\n` +
+      `📋 *Protocolo:* ${currentProtocolData.protocol}\n` +
+      `📍 *Local:* ${currentProtocolData.bairro}\n` +
+      `🏥 *Tema:* ${currentProtocolData.categoria}\n\n` +
+      `Cadastre a sua também no site oficial de Ron do Povo!`;
+    const url = `https://wa.me/?text=${encodeURIComponent(shareMsg)}`;
+    window.open(url, '_blank');
+  });
+
+  // --- 7. SCROLL SPY & REVEALS ---
   const sections = document.querySelectorAll('main > section[id]');
 
   function updateActiveNav() {

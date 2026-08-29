@@ -88,6 +88,7 @@
         <a href="#materiais" class="nav-link">MATERIAIS</a>
         <a href="#foto-perfil" class="nav-link">FOTO 11333</a>
         <a href="#participe" class="nav-link">PARTICIPE</a>
+        <a href="#ouvidoria" class="nav-link nav-link--fala-povo">FALA POVO 📢</a>
       </nav>
 
       <!-- Header Actions: Search & Yellow CTA -->
@@ -143,6 +144,7 @@
         <a href="#materiais" class="mobile-nav-link"><span class="nav-icon">📦</span> MATERIAIS DE CAMPANHA</a>
         <a href="#foto-perfil" class="mobile-nav-link mobile-nav-link--highlight"><span class="nav-icon">📸</span> FOTO OFICIAL 11333</a>
         <a href="#participe" class="mobile-nav-link"><span class="nav-icon">🤝</span> PARTICIPE DA CAMINHADA</a>
+        <a href="#ouvidoria" class="mobile-nav-link mobile-nav-link--ouvidoria"><span class="nav-icon">📢</span> FALA POVO (DEMANDAS)</a>
       </nav>
 
       <div class="mobile-drawer__cta">
@@ -782,10 +784,166 @@
       </div>
     </section>
 
+    <!-- =========================================================================
+         12. FALA POVO & GABINETE POPULAR (PENDÊNCIAS E MELHORIAS NA CIDADE)
+         ========================================================================= -->
+    <section class="section section-ouvidoria" id="ouvidoria">
+      <div class="container">
+        
+        <div class="section-title-wrap text-center reveal">
+          <span class="section-badge-sub section-badge-sub--green">GABINETE POPULAR • A VOZ DA SUA COMUNIDADE</span>
+          <h2 class="section-main-title">O que precisa <span class="text-green-highlight">melhorar na sua cidade?</span></h2>
+          <p class="section-subtitle-text">Conte para Ron do Povo as pendências, buracos, falta de postos, iluminação ou melhorias para o seu bairro. Vamos cobrar e lutar por você!</p>
+        </div>
+
+        <div class="ouvidoria-card-container reveal">
+          <div class="ouvidoria-grid">
+            
+            <!-- Left Column: Context, Category Tags & Stats -->
+            <div class="ouvidoria-info-col">
+              
+              <div class="ouvidoria-badge-destaque">
+                <span class="pulse-dot"></span>
+                <span>Canal Direto com Ron do Povo 11333</span>
+              </div>
+
+              <h3 class="ouvidoria-info-title">A sua voz tem força e vai virar projeto e cobrança!</h3>
+              
+              <p class="ouvidoria-info-p">
+                "Nosso trabalho sempre nasceu no chão da rua, conversando com feirantes, mototaxistas e trabalhadores. Nenhum político resolve nada fechado em gabinete com ar-condicionado. Diga o que precisa melhorar na sua rua ou distrito que vamos fiscalizar e buscar soluções na Assembleia Legislativa!"
+              </p>
+
+              <div class="ouvidoria-quote-author">
+                <div class="author-avatar-badge">💚</div>
+                <div>
+                  <strong>Ronaldo Almeida Caribé (Ron do Povo)</strong>
+                  <span>Candidato a Deputado Estadual • 11333</span>
+                </div>
+              </div>
+
+              <!-- Quick Category Selector -->
+              <div class="ouvidoria-quick-select-wrap">
+                <span class="quick-select-label">Selecione o tema da sua pendência:</span>
+                <div class="ouvidoria-category-pills" id="ouvidoria-category-pills">
+                  <button type="button" class="cat-pill is-active" data-cat="Saúde & Postos de Atendimento">🏥 Saúde & Postos</button>
+                  <button type="button" class="cat-pill" data-cat="Asfalto, Buracos & Pavimentação">🛣️ Asfalto & Buracos</button>
+                  <button type="button" class="cat-pill" data-cat="Iluminação Pública & Lâmpadas">💡 Iluminação Pública</button>
+                  <button type="button" class="cat-pill" data-cat="Segurança & Ronda no Bairro">👮 Segurança do Bairro</button>
+                  <button type="button" class="cat-pill" data-cat="Transporte, Ônibus & Mobilidade">🚌 Ônibus & Transporte</button>
+                  <button type="button" class="cat-pill" data-cat="Apoio a Ambulantes & Feirantes">💼 Feiras & Ambulantes</button>
+                  <button type="button" class="cat-pill" data-cat="Esporte, Praças & Lazer">⚽ Praças & Esportes</button>
+                  <button type="button" class="cat-pill" data-cat="Escolas & Educação Infantil">📚 Educação & Creches</button>
+                  <button type="button" class="cat-pill" data-cat="Água, Saneamento & Drenagem">💧 Água & Esgoto</button>
+                  <button type="button" class="cat-pill" data-cat="Outra Pendência / Sugestão">📌 Outras Pendências</button>
+                </div>
+              </div>
+
+              <!-- Stats Cards -->
+              <div class="ouvidoria-stats-row">
+                <div class="ostat-item">
+                  <span class="ostat-number">+1.800</span>
+                  <span class="ostat-label">Demandas ouvidas</span>
+                </div>
+                <div class="ostat-item">
+                  <span class="ostat-number">100%</span>
+                  <span class="ostat-label">Fiscalização nas ruas</span>
+                </div>
+                <div class="ostat-item">
+                  <span class="ostat-number">Bahia</span>
+                  <span class="ostat-label">Voz do trabalhador</span>
+                </div>
+              </div>
+
+            </div>
+
+            <!-- Right Column: Interactive Form -->
+            <div class="ouvidoria-form-col">
+              <form class="ouvidoria-form" id="form-ouvidoria">
+                
+                <div class="form-header-box">
+                  <span class="form-header-badge">FORMULÁRIO OFICIAL DE PENDÊNCIAS</span>
+                  <h4>Mande sua Demanda ou Sugestão</h4>
+                  <p>Preencha os dados abaixo para enviar diretamente ao WhatsApp oficial do candidato ou registrar no gabinete online.</p>
+                </div>
+
+                <div class="ouvidoria-fields-grid">
+                  
+                  <div class="form-group">
+                    <label for="demanda-nome">Seu Nome Completo *</label>
+                    <input type="text" id="demanda-nome" placeholder="Digite seu nome" required>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="demanda-whatsapp">Seu WhatsApp com DDD *</label>
+                    <input type="tel" id="demanda-whatsapp" placeholder="(75) 99999-9999" required>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="demanda-cidade-bairro">Cidade & Bairro / Distrito *</label>
+                    <input type="text" id="demanda-cidade-bairro" placeholder="Ex: Feira de Santana - Bairro Tomba" required>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="demanda-categoria">Categoria da Pendência *</label>
+                    <select id="demanda-categoria" required>
+                      <option value="Saúde & Postos de Atendimento" selected>🏥 Saúde & Postos de Atendimento</option>
+                      <option value="Asfalto, Buracos & Pavimentação">🛣️ Asfalto, Buracos & Pavimentação</option>
+                      <option value="Iluminação Pública & Lâmpadas">💡 Iluminação Pública & Lâmpadas</option>
+                      <option value="Segurança & Ronda no Bairro">👮 Segurança & Ronda no Bairro</option>
+                      <option value="Transporte, Ônibus & Mobilidade">🚌 Transporte, Ônibus & Mobilidade</option>
+                      <option value="Apoio a Ambulantes & Feirantes">💼 Apoio a Ambulantes & Feirantes</option>
+                      <option value="Esporte, Praças & Lazer">⚽ Esporte, Praças & Lazer</option>
+                      <option value="Escolas & Educação Infantil">📚 Escolas & Educação Infantil</option>
+                      <option value="Água, Saneamento & Drenagem">💧 Água, Saneamento & Drenagem</option>
+                      <option value="Outra Pendência / Sugestão">📌 Outra Pendência / Sugestão</option>
+                    </select>
+                  </div>
+
+                  <div class="form-group full-width">
+                    <label for="demanda-rua">Rua ou Ponto de Referência (Opcional)</label>
+                    <input type="text" id="demanda-rua" placeholder="Ex: Rua São Roque, próximo à escola municipal">
+                  </div>
+
+                  <div class="form-group full-width">
+                    <label for="demanda-descricao">O que precisa melhorar? Descreva sua pendência *</label>
+                    <textarea id="demanda-descricao" rows="4" placeholder="Descreva os detalhes da pendência, do buraco, da falta de iluminação ou o que precisa melhorar na sua rua..." required></textarea>
+                    <span class="textarea-hint">💡 Conte detalhes para ajudar a equipe a formalizar o pedido ou cobrança.</span>
+                  </div>
+
+                </div>
+
+                <div class="ouvidoria-form-actions">
+                  <!-- Botão WhatsApp Principal -->
+                  <button type="submit" class="btn-zap-submit" id="btn-submit-zap">
+                    <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor">
+                      <path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2zm5.8 14.16c-.24.68-1.4 1.34-1.93 1.39-.5.05-1.15.08-3.72-.98-3.28-1.36-5.4-4.69-5.56-4.9-.16-.22-1.32-1.75-1.32-3.34 0-1.59.83-2.37 1.13-2.69.29-.32.64-.4 86-.4.21 0 .43.01.61.02.2.01.46-.08.72.55.27.64.91 2.22.99 2.38.08.16.14.35.03.57-.11.21-.17.34-.33.53-.16.19-.34.42-.48.56-.16.16-.33.34-.14.66.19.32.84 1.39 1.8 2.25 1.24 1.11 2.28 1.45 2.6 1.61.32.16.51.13.7-.08.19-.21.82-.96 1.04-1.29.22-.33.43-.27.72-.16.29.11 1.86.88 2.18 1.04.32.16.53.24.61.38.08.13.08.78-.16 1.46z"/>
+                    </svg>
+                    <span>Enviar Demanda pelo Zap ➔</span>
+                  </button>
+
+                  <!-- Botão Registrar Online -->
+                  <button type="button" class="btn-online-submit" id="btn-submit-online">
+                    <span>📋 Gerar Protocolo no Gabinete</span>
+                  </button>
+                </div>
+
+                <div class="ouvidoria-form-footer">
+                  <span>🔒 Garantia de sigilo: seus dados serão usados exclusivamente pela equipe para retorno da demanda.</span>
+                </div>
+
+              </form>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
   </main>
 
   <!-- =========================================================================
-       12. FLOATING ACTION ELEMENTS (Acessibilidade & Cookies)
+       13. FLOATING ACTION ELEMENTS (Acessibilidade & Cookies)
        ========================================================================= -->
   <!-- Floating Accessibility Side Button (Igual à Referência) -->
   <button type="button" class="floating-access-badge" id="floating-access-btn" aria-label="Abrir Menu de Acessibilidade">
@@ -814,10 +972,14 @@
     <a class="mobile-sticky-btn mobile-sticky-btn--foto" href="#foto-perfil">
       <span>📸 Foto 11333</span>
     </a>
+
+    <a class="mobile-sticky-btn mobile-sticky-btn--ouvidoria" href="#ouvidoria">
+      <span>📢 Fala Povo</span>
+    </a>
   </aside>
 
   <!-- =========================================================================
-       13. SEARCH & COOKIE MODALS
+       14. MODALS (SEARCH, COOKIES & PROTOCOLO DE DEMANDA)
        ========================================================================= -->
   <!-- Search Modal -->
   <div class="modal-overlay" id="search-modal" aria-hidden="true">
@@ -831,6 +993,7 @@
         <div class="search-results-list" id="search-results">
           <p class="search-hint">Sugestões rápidas:</p>
           <div class="search-quick-tags">
+            <a href="#ouvidoria" class="quick-tag">📢 Enviar Pendência / Fala Povo</a>
             <a href="#dor-cronica" class="quick-tag">🏥 Dor Crônica</a>
             <a href="#biografia" class="quick-tag">👤 Biografia</a>
             <a href="#propostas" class="quick-tag">📋 Compromissos</a>
@@ -868,8 +1031,57 @@
     </div>
   </div>
 
+  <!-- Protocol Modal / Feedback de Demanda Registrada -->
+  <div class="modal-overlay" id="protocol-modal" aria-hidden="true">
+    <div class="modal-card modal-card--protocol">
+      <div class="protocol-header-badge">
+        <div class="protocol-icon-check">✓</div>
+        <h3>Demanda Cadastrada com Sucesso!</h3>
+        <p>Sua voz foi registrada no <strong>Gabinete Popular de Ron do Povo 11333</strong>.</p>
+      </div>
+
+      <div class="protocol-body-box">
+        <div class="protocol-number-tag">
+          <span class="p-tag-label">NÚMERO DO PROTOCOLO</span>
+          <div class="p-tag-code" id="modal-protocol-code">RON-2026-0000</div>
+          <button type="button" class="btn-copy-code" id="btn-copy-protocol">
+            <span id="copy-text">Copiar Protocolo 📋</span>
+          </button>
+        </div>
+
+        <div class="protocol-details-grid">
+          <div class="p-detail-item">
+            <span>Cidadão(ã):</span>
+            <strong id="modal-protocol-nome">-</strong>
+          </div>
+          <div class="p-detail-item">
+            <span>Local / Bairro:</span>
+            <strong id="modal-protocol-bairro">-</strong>
+          </div>
+          <div class="p-detail-item">
+            <span>Categoria:</span>
+            <strong id="modal-protocol-categoria">-</strong>
+          </div>
+          <div class="p-detail-item">
+            <span>Situação:</span>
+            <span class="status-badge-ok">🟢 Registrado para Cobrança</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="protocol-modal-actions">
+        <button type="button" class="btn-yellow-cta" id="btn-share-whatsapp-protocol" style="width: 100%;">
+          <span>Compartilhar Protocolo no WhatsApp 📱</span>
+        </button>
+        <button type="button" class="btn-outline-blue" id="close-protocol-modal" style="width: 100%; justify-content: center; margin-top: 0.6rem;">
+          <span>Concluir</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
   <!-- =========================================================================
-       14. FOOTER (Padrão Oficial e Transparência Eleitoral)
+       15. FOOTER (Padrão Oficial e Transparência Eleitoral)
        ========================================================================= -->
   <footer class="footer" id="rodape">
     <div class="container footer__container">
@@ -894,6 +1106,7 @@
           <h4>Navegação</h4>
           <ul>
             <li><a href="#inicio">Início</a></li>
+            <li><a href="#ouvidoria">Fala Povo (Mande sua Demanda)</a></li>
             <li><a href="#agenda">Agenda de Visitas</a></li>
             <li><a href="#dor-cronica">Proposta Dor Crônica</a></li>
             <li><a href="#biografia">Biografia de Ron</a></li>
